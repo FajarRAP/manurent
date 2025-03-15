@@ -15,27 +15,27 @@
 
         <div>
             <x-input-label for="current_password" :value="__('Current Password')" />
-            <input id="current_password" name="current_password" type="password" class="mt-1 block w-full"
+            <input id="current_password" name="current_password" type="password" class="block w-full mt-1"
                 autocomplete="current-password" />
             <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2" />
         </div>
 
         <div>
             <x-input-label for="password" :value="__('New Password')" />
-            <input id="password" name="password" type="password" class="mt-1 block w-full"
+            <input id="password" name="password" type="password" class="block w-full mt-1"
                 autocomplete="new-password" />
             <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />
         </div>
 
         <div>
             <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-            <input id="password_confirmation" name="password_confirmation" type="password" class="mt-1 block w-full"
+            <input id="password_confirmation" name="password_confirmation" type="password" class="block w-full mt-1"
                 autocomplete="new-password" />
             <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2" />
         </div>
 
         <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
+            <x-primary-button title="Save"></x-primary-button>
 
             @if (session('status') === 'password-updated')
                 <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
